@@ -71,7 +71,7 @@ namespace Cryptography.Migrations
 
                     b.HasKey("CustomerId");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customer", (string)null);
                 });
 #pragma warning restore 612, 618
         }

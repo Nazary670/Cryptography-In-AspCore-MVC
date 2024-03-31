@@ -7,7 +7,8 @@ namespace Cryptography.Controllers
 {
     public class CustomersController(ApplicationDbContext context) : Controller
     {
-        private readonly ApplicationDbContext _context = context;
+        private readonly ApplicationDbContext _context=context;
+        
 
         // GET: Customers
         public async Task<IActionResult> Index()
@@ -50,8 +51,9 @@ namespace Cryptography.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _context.Add(customer);
-                    await _context.SaveChangesAsync();
+                   
+                    await _context.AddAsync(customer);
+                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
                 return View(customer);

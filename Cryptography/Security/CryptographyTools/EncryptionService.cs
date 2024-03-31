@@ -40,7 +40,9 @@ namespace Cryptography.Security.CryptographyTools
             using MemoryStream memoryStream = new(buffer);
             using CryptoStream cryptoStream = new(memoryStream, decryptor, CryptoStreamMode.Read);
             using StreamReader streamReader = new(cryptoStream);
-            return streamReader.ReadToEnd();
+           
+            var result= streamReader.ReadToEnd().Replace("\0", string.Empty);
+            return result;
         }
 
     }

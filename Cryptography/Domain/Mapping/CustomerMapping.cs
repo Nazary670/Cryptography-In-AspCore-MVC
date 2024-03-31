@@ -7,7 +7,7 @@ namespace Cryptography.Domain.Mapping
 {
     public class CustomerMapping : IEntityTypeConfiguration<Customer>
     {
-        private readonly EncryptionService _EncryptionService;
+        private readonly EncryptionService _EncryptionService=new EncryptionService();
 
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
