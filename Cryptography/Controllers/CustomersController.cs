@@ -58,7 +58,7 @@ namespace Cryptography.Controllers
             }
             catch (Exception EX)
             {
-                return BadRequest(EX.Message);
+                return BadRequest(EX.ToString());
             }   
         }
 
